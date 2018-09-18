@@ -15,7 +15,7 @@ def login_user(request, format=None):
     try:
         if request.user.is_authenticated:
             return Response(status = status.HTTP_200_OK)
-
+       
         serializer = LoginSerializer(data=request.data)
         if serializer.is_valid():
             email = serializer.validated_data["email"]
@@ -25,12 +25,10 @@ def login_user(request, format=None):
                 login(request, user)
                 return Response(status=status.HTTP_200_OK)
             else:
-                return Response(errors = serializer.errors, status = status.HTTP_400_BAD_REQUEST)
-        Response(status=status.HTTP_400_BAD_REQUEST)
+                return Response(status = status.HTTP_400_BAD_REQUEST)
+        Response(errors = serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     except:
         return Response(status=status.HTTP_400_BAD_REQUEST)
-    return Response({'email': '', 'password':''}, status=status.HTTP_200_OK)
-
         
 
 @api_view(['POST'])
@@ -61,7 +59,7 @@ def sign_up(request, format=None):
         return Response(errors = serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
         print(e)
-    return Response({"email":"","password":"","name":"","bio":""}, status=status.HTTP_200_OK)
+    return Response({'key': 'value'}, status=status.HTTP_200_OK)
 
 
         
