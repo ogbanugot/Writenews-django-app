@@ -12,6 +12,8 @@ from rest_framework import generics
 @requires_csrf_token
 @api_view(['POST'])
 def login_user(request, format=None):
+    '''Sample request: {"email":mary@gmail.com","password":"something"}
+    '''
     try:
         if request.user.is_authenticated:
             return Response(status = status.HTTP_200_OK)
@@ -39,6 +41,8 @@ def logout_user(request):
 
 @api_view(['POST'])
 def sign_up(request, format=None):
+    '''Sample request: {"email":"ogbanugot@gmail.com","password":"ogban","name":"ogban ugot","bio":"Scientist"}
+    '''
     if request.user.is_authenticated:
         return Response(status = status.HTTP_400_BAD_REQUEST)
 
