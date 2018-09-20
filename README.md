@@ -11,12 +11,12 @@ Sample request: {"email":"ogbanugot@gmail.com","password":"ogban"}
   
 ## augh/logout  
 Endpoint for logout; Allowed http method: POST.  
-Sample request: {""}    
+Sample request: {" "}    
   
 ## article/  
 Endpoint for getting all articles; Allowed http method: GET  
 
-## article/id  
+## article/id?  
 Endpoint for getting a particular article; Allowed http method: GET,POST, PUT, DELETE PATCH   
 Sample response: {
         "id": 1,
@@ -30,7 +30,7 @@ Sample response: {
 Endpoint for getting all writers; Allowed http method: GET  
 Returns json of all writers  
 
-## article/users/id  
+## article/users/id?  
 Endpoint for getting a particular writer; Allowed http method: POST, GET  
 Sample response: {
         "id": 1,
