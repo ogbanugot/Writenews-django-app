@@ -1,5 +1,6 @@
 # Writenews-django-app
 The django peoject contains two apps, article and authorization. The api endpoints in each app is described below  
+view the api endpoints here https://writenews.herokuapp.com/auth/login/
 
 ## auth/signup  
 Endpoint for signing up; Allowed http method: POST.  
